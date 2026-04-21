@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rickmorty/models/character.dart';
 import 'package:rickmorty/services/api_service.dart';
 import 'package:rickmorty/services/rick_morty_service.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:rickmorty/info_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -90,6 +93,15 @@ class CharacterCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 16),
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      child:GestureDetector(
+        onTap:(){
+          Navigator.push(
+            context,
+            CupertinoPageRoute(
+              builder: (context)=> InfoCard(character:character),
+              ),
+          );
+        },
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -140,6 +152,7 @@ class CharacterCard extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
