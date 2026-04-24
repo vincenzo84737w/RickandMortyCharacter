@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+
 import 'package:rickmorty/models/character.dart';
 import 'api_service.dart';
 
